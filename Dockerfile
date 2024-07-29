@@ -25,6 +25,12 @@ RUN apt-get update && apt-get install -y \
 # Enable Apache modules if needed
 RUN a2enmod rewrite
 
+# Set the Apache document root
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
+
+# Update the default Apache site configuration
+COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
+
 # Copy custom php.ini configuration
 COPY config/php.ini /usr/local/etc/php/
 
