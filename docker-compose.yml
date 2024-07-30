@@ -27,7 +27,7 @@ services:
       MYSQL_PASSWORD: pass
     volumes:
       - db_data:/var/lib/mysql
-      - ./rentorlend.sql:/docker-entrypoint-initdb.d/rentorlend.sql
+      #- ./rentorlend.sql:/docker-entrypoint-initdb.d/rentorlend.sql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
